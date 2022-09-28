@@ -15,4 +15,3 @@ for i in range(36):
     pen.left(10)
 screen = Screen()
 screen.exitonclick()
-print(123)
