@@ -13,5 +13,6 @@ pen = Turtle()
 for i in range(36):
     square()
     pen.left(10)
+print(10000)
 screen = Screen()
 screen.exitonclick()
