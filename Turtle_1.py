@@ -7,9 +7,10 @@ def square():
     for i in range(4):
         pen.forward(100)
         pen.right(90)
-
-
 pen = Turtle()
-square()
+for _ in range(36):
+    square()
+    pen.left(10)
+pen.hideturtle()
 screen = Screen()
 screen.exitonclick()
