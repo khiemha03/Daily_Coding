@@ -3,6 +3,7 @@ import random
 import keyboard
 
 
+
 def turn_left():
     pen.left(90)
     pen.forward(LENGTH_PATH)
