@@ -2,6 +2,7 @@
 from turtle import Turtle, Screen, color
 import random
 
+
 def square():
     x = random.randint(0,255)
     y = random.randint(0,255)
@@ -10,6 +11,8 @@ def square():
     for i in range(4):
         pen.forward(100)
         pen.right(90)
+
+
 pen = Turtle()
 screen = Screen()
 screen.colormode(255)
