@@ -20,6 +20,5 @@ for _ in range(36):
     square()
     pen.left(10)
 
-
 pen.hideturtle()
 screen.exitonclick()
