@@ -21,6 +21,8 @@ screen.onkey(snake.left,"a")
 screen.onkey(snake.right,"d")
 while snake.state:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(0.05)
     snake.move()
+    if food.food.distance(snake.head) < 10:
+        snake.eat()
 screen.exitonclick()

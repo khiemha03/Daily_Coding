@@ -1,7 +1,8 @@
 from turtle import Turtle
 from food import Food
 STARTING_POSITION = [(0, 0), (-20, 0), (-40, 0)]
-NEON_COLOR = (15, 255, 80)
+BODY_COLOR = (15, 255, 80)
+HEAD_COLOR = (15,175,80)
 SPEED = 20
 UP = 90
 DOWN = 270
@@ -12,22 +13,23 @@ class Snake:
         super().__init__()
         self.part = []
         self.create()
-        self.head= self.part[0]
+        self.head = self.part[0]
         self.state = True
     def create(self):
         for position in STARTING_POSITION:
             snake_body = Turtle()
             snake_body.shape("square")
-            snake_body.color(NEON_COLOR)
+            snake_body.color(BODY_COLOR)
             snake_body.penup()
             snake_body.goto(position)
             snake_body.speed(5)
             self.part.append(snake_body)
+        self.part[0].color(HEAD_COLOR)
     def eat(self):
         print(321)
         snake_body = Turtle()
         snake_body.shape("square")
-        snake_body.color(NEON_COLOR)
+        snake_body.color(BODY_COLOR)
         snake_body.penup()
         snake_body.goto(self.part[-1].pos())
         self.part.append(snake_body)
