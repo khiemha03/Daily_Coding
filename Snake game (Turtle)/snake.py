@@ -12,6 +12,7 @@ class Snake:
         self.part = []
         self.create()
         self.head= self.part[0]
+        self.state = True
     def create(self):
         for position in STARTING_POSITION:
             snake_body = Turtle()
@@ -27,6 +28,11 @@ class Snake:
             new_y = self.part[i-1].ycor()
             self.part[i].goto(new_x,new_y)
         self.head.forward(SPEED)
+        if self.head.xcor() > 380 or self.head.xcor() < -380 or self.head.ycor() > 380 or self.head.ycor() < -380:
+            self.state = False
+        for i in range(1, len(self.part)):
+            if self.head.pos() == self.part[i].pos():
+                self.state = False
     def up(self):
         if self.head.heading() != DOWN:
             self.head.setheading(UP)
