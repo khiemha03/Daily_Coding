@@ -26,21 +26,19 @@ class Snake:
             self.part.append(snake_body)
         self.part[0].color(HEAD_COLOR)
     def eat(self):
-        print(321)
         snake_body = Turtle()
         snake_body.shape("square")
         snake_body.color(BODY_COLOR)
         snake_body.penup()
         snake_body.goto(self.part[-1].pos())
         self.part.append(snake_body)
-        print(len(self.part))
     def move(self):
         for i in range(len(self.part)-1,0,-1):
             new_x = self.part[i-1].xcor()
             new_y = self.part[i-1].ycor()
             self.part[i].goto(new_x,new_y)
         self.head.forward(SPEED)
-        if self.head.xcor() > 380 or self.head.xcor() < -380 or self.head.ycor() > 380 or self.head.ycor() < -380:
+        if self.head.xcor() > 390 or self.head.xcor() < -390 or self.head.ycor() > 395 or self.head.ycor() < -395:
             self.state = False
         for i in range(1, len(self.part)):
             if self.head.pos() == self.part[i].pos():
