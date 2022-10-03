@@ -23,5 +23,4 @@ while snake.state:
     screen.update()
     time.sleep(0.1)
     snake.move()
-
 screen.exitonclick()

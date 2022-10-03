@@ -5,12 +5,13 @@ class Food:
         self.creat()
 
     def creat(self):
-        food = Turtle()
-        xcor = (random.randint(1,10)-1)*20
-        ycor = (random.randint(1,10)-1)*20
-        food.penup()
-        food.color("orange")
-        food.shape("circle")
-        food.goto(xcor,ycor)
+        self.food = Turtle()
+        self.xcor = (random.randint(1,10)-1)*20
+        self.ycor = (random.randint(1,10)-1)*20
+        self.food_cor = (self.xcor,self.ycor)
+        self.food.penup()
+        self.food.color("orange")
+        self.food.shape("circle")
+        self.food.goto(self.xcor,self.ycor)
 
 

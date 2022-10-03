@@ -1,5 +1,5 @@
 from turtle import Turtle
-
+from food import Food
 STARTING_POSITION = [(0, 0), (-20, 0), (-40, 0)]
 NEON_COLOR = (15, 255, 80)
 SPEED = 20
@@ -9,6 +9,7 @@ RIGHT = 0
 LEFT = 180
 class Snake:
     def __init__(self):
+        super().__init__()
         self.part = []
         self.create()
         self.head= self.part[0]
@@ -22,6 +23,15 @@ class Snake:
             snake_body.goto(position)
             snake_body.speed(5)
             self.part.append(snake_body)
+    def eat(self):
+        print(321)
+        snake_body = Turtle()
+        snake_body.shape("square")
+        snake_body.color(NEON_COLOR)
+        snake_body.penup()
+        snake_body.goto(self.part[-1].pos())
+        self.part.append(snake_body)
+        print(len(self.part))
     def move(self):
         for i in range(len(self.part)-1,0,-1):
             new_x = self.part[i-1].xcor()
