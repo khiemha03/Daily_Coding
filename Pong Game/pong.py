@@ -1,7 +1,13 @@
 from turtle import Turtle
-
+import random
+import time
 class Pong:
     def __init__(self):
+        self.score = 0
+        # self.x_cor = random.uniform(0, 10)
+        # self.y_cor = random.uniform(0, 10)
+        self.x_cor = 3
+        self.y_cor = 3
         self.line()
         self.pong()
     def line(self):
@@ -21,3 +27,14 @@ class Pong:
         self.ball.penup()
         self.ball.color("white")
         self.ball.shape("circle")
+    def ybounce(self):
+        self.y_cor *= -1
+    def xbounce(self):
+        self.x_cor *= -1
+    def moving(self):
+        self.new_xcor = self.ball.xcor() + self.x_cor
+        self.new_ycor = self.ball.ycor() + self.y_cor
+        self.ball.goto(self.new_xcor, self.new_ycor)
+    def reset(self):
+        self.ball.home()
+        self.moving()

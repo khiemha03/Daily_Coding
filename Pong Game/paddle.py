@@ -32,14 +32,11 @@ class Paddle:
             self.paddle_2.back(10)
     def checking(self):
         if keyboard.is_pressed("w"):
-            time.sleep(0.02)
             self.move_up_paddle_1()
         if keyboard.is_pressed("s"):
-            time.sleep(0.02)
             self.move_down_paddle_1()
         if keyboard.is_pressed("Up"):
-            time.sleep(0.02)
             self.move_up_paddle_2()
         if keyboard.is_pressed("Down"):
-            time.sleep(0.02)
             self.move_down_paddle_2()
+
