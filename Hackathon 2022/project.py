@@ -50,7 +50,7 @@ for article in cnn_articles:
 account_sid = os.getenv("SID")
 auth_token = os.getenv("AUTH_KEY")
 client = Client(account_sid, auth_token)
-PHONE_NUMBER = '+18328984006'
+PHONE = os.getenv("PHONE_NUMBER")
 content = f'''
 Here is the new for today:
 CRIME:
@@ -69,7 +69,7 @@ HEALTH:
 message = client.messages.create(
                               messaging_service_sid='MG87a354014d7bb9774b9525b4a8ff27c0',
                               body=content,
-                              to= PHONE_NUMBER
+                              to= PHONE
                           )
 print(content)
 
